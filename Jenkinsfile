@@ -24,7 +24,7 @@ pipeline {
                 where python
 
                 echo Python Version:
-                "%PYTHON_HOME%\\python.exe" --version
+                "C:\Users\ADMIN\AppData\Local\Python\bin\python.exe\\python.exe" --version
                 """
             }
         }
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo 'Executing Python script...'
                 bat """
-                "%PYTHON_HOME%\\python.exe" %SCRIPT_NAME%
+                "C:\Users\ADMIN\AppData\Local\Python\bin\python.exe\\python.exe" %SCRIPT_NAME%
                 """
             }
         }
