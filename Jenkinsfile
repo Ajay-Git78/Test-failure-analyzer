@@ -2,8 +2,7 @@ pipeline {
     agent any
 
     environment {
-        // 🔧 Update this path based on your actual Python installation
-        PYTHON_HOME = "C:\\Program Files\\Python312"
+        PYTHON_EXE = "C:\\Users\\ADMIN\\AppData\\Local\\Python\\bin\\python.exe"
         SCRIPT_NAME = "hello.py"
     }
 
@@ -20,11 +19,11 @@ pipeline {
             steps {
                 echo 'Verifying Python installation...'
                 bat """
-                echo Python Path:
-                where python
+                echo Python Executable:
+                "%PYTHON_EXE%"
 
                 echo Python Version:
-                "C:\Users\ADMIN\AppData\Local\Python\bin\python.exe\\python.exe" --version
+                "%PYTHON_EXE%" --version
                 """
             }
         }
@@ -33,7 +32,7 @@ pipeline {
             steps {
                 echo 'Executing Python script...'
                 bat """
-                "C:\Users\ADMIN\AppData\Local\Python\bin\python.exe\\python.exe" %SCRIPT_NAME%
+                "%PYTHON_EXE%" %SCRIPT_NAME%
                 """
             }
         }
