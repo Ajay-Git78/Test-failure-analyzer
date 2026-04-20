@@ -12,7 +12,7 @@ pipeline {
             steps {
                 echo 'Executing Python code...'
                 // Use 'bat' for Windows. Ensure python is in your System PATH.
-                bat 'python hello.py'
+                bat 'C:\Users\ADMIN\AppData\Local\Microsoft\WindowsApps\python.exe hello.py'
             }
         }
     }
